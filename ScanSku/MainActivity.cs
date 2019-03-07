@@ -22,10 +22,10 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
-using static DespatchBayExpress.DespatchBayExpressDataBase;
+using static ScanSKU.ScanSKUDataBase;
 using Permission = Android.Content.PM.Permission;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
 
     [Activity(WindowSoftInputMode = SoftInput.StateAlwaysHidden, Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
@@ -82,7 +82,7 @@ namespace DespatchBayExpress
                 "localscandata.db3");
             databaseConnection = new SQLiteConnection(databasePath);
             // Create the ParcelScans table
-            databaseConnection.CreateTable<DespatchBayExpressDataBase.ParcelScans>();
+            databaseConnection.CreateTable<ScanSKUDataBase.ParcelScans>();
             if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == (int)Permission.Granted)
             {
                 mediaPlayer = MediaPlayer.Create(this, Resource.Raw.beep_07);
@@ -126,7 +126,7 @@ namespace DespatchBayExpress
 
                             if (patternFound)
                             {
-                                var newScan = new DespatchBayExpressDataBase.ParcelScans
+                                var newScan = new ScanSKUDataBase.ParcelScans
                                 {
                                     TrackingNumber = TrackingScan.Text.ToUpper(),
                                     ScanTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"),
@@ -364,7 +364,7 @@ namespace DespatchBayExpress
                     SetBatchNumber(true);
                     break;
                 case Resource.Id.menu_sqldatadelete:
-                    databaseConnection.DeleteAll<DespatchBayExpressDataBase.ParcelScans>();
+                    databaseConnection.DeleteAll<ScanSKUDataBase.ParcelScans>();
                     TrackingNumberDataProvider();
                     break;
 
@@ -380,7 +380,7 @@ namespace DespatchBayExpress
             {
 
 
-                var parcelScans = databaseConnection.Query<DespatchBayExpressDataBase.ParcelScans>("SELECT * FROM ParcelScans");
+                var parcelScans = databaseConnection.Query<ScanSKUDataBase.ParcelScans>("SELECT * FROM ParcelScans");
 
                 string fileName = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss") + ".csv";
                 // Set a variable to the Documents path.
@@ -431,7 +431,7 @@ namespace DespatchBayExpress
             catch { }
 
             // Fetch all the batches that have not been uploaded
-            var batchnumbers = databaseConnection.Query<DespatchBayExpressDataBase.ParcelScans>("SELECT Batch FROM ParcelScans WHERE Sent IS null GROUP BY Batch");
+            var batchnumbers = databaseConnection.Query<ScanSKUDataBase.ParcelScans>("SELECT Batch FROM ParcelScans WHERE Sent IS null GROUP BY Batch");
 
             foreach (var batch in batchnumbers)
             {
@@ -442,10 +442,10 @@ namespace DespatchBayExpress
 
                 // regardless of whether we get a successful upload we still must flag the items as being collected, 
                 // the assumtion being that they will have been taken away even if the dirver did not upload the collection 
-                var parcelScans = databaseConnection.Query<DespatchBayExpressDataBase.ParcelScans>("UPDATE ParcelScans set IsCollected = 1  WHERE Sent IS null and batch=?", collection.batchnumber);
+                var parcelScans = databaseConnection.Query<ScanSKUDataBase.ParcelScans>("UPDATE ParcelScans set IsCollected = 1  WHERE Sent IS null and batch=?", collection.batchnumber);
 
                 // Need to select all the scans that have not been uploaded and match the current batch
-                parcelScans = databaseConnection.Query<DespatchBayExpressDataBase.ParcelScans>("SELECT * FROM ParcelScans WHERE Sent IS null and batch=?", collection.batchnumber);
+                parcelScans = databaseConnection.Query<ScanSKUDataBase.ParcelScans>("SELECT * FROM ParcelScans WHERE Sent IS null and batch=?", collection.batchnumber);
 
                 List<Scan> scannedParcelList = new List<Scan>();
 
@@ -502,7 +502,7 @@ namespace DespatchBayExpress
                         if (httpResponse.StatusCode == HttpStatusCode.OK)
                         {
                             Log.Info("TAG-ASYNCTASK", "Success, update parcels");
-                            parcelScans = databaseConnection.Query<DespatchBayExpressDataBase.ParcelScans>("UPDATE ParcelScans set Sent=? WHERE Sent IS null and batch=?", startTime, collection.batchnumber);
+                            parcelScans = databaseConnection.Query<ScanSKUDataBase.ParcelScans>("UPDATE ParcelScans set Sent=? WHERE Sent IS null and batch=?", startTime, collection.batchnumber);
                         }
                         else
                         {
@@ -523,7 +523,7 @@ namespace DespatchBayExpress
             }
             Int16 days = Convert.ToInt16(retentionPeriod);
             var dateTime = DateTime.Now.AddDays(-days);
-            var deleteScans = databaseConnection.Query<DespatchBayExpressDataBase.ParcelScans>("DELETE FROM ParcelScans WHERE Sent <= ?", dateTime.ToString("yyyy-MM-ddTHH:mm:ss"));
+            var deleteScans = databaseConnection.Query<ScanSKUDataBase.ParcelScans>("DELETE FROM ParcelScans WHERE Sent <= ?", dateTime.ToString("yyyy-MM-ddTHH:mm:ss"));
 
             Log.Info("TAG-ASYNCTASK", "Work complete");
 

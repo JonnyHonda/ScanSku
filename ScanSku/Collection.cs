@@ -6,7 +6,7 @@
 //
 //    var collectionObject = CollectionObject.FromJson(jsonString);
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
@@ -51,12 +51,12 @@ namespace DespatchBayExpress
 
     public partial class Collection
     {
-        public static Collection FromJson(string json) => JsonConvert.DeserializeObject<Collection>(json, DespatchBayExpress.Converter.Settings);
+        public static Collection FromJson(string json) => JsonConvert.DeserializeObject<Collection>(json, ScanSKU.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Collection self) => JsonConvert.SerializeObject(self, DespatchBayExpress.Converter.Settings);
+        public static string ToJson(this Collection self) => JsonConvert.SerializeObject(self, ScanSKU.Converter.Settings);
     }
 
     internal static class Converter

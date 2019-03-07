@@ -3,9 +3,9 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
 using SQLite;
-using static DespatchBayExpress.DespatchBayExpressDataBase;
+using static ScanSKU.ScanSKUDataBase;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
     public class SqliteActivity : Activity

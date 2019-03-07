@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("DespatchBayExpress.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("ScanSKU.Resource", IsApplication=true)]
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
 	
 	

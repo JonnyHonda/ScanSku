@@ -1,16 +1,16 @@
 ﻿using SQLite;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     /// <summary>
     /// ScanSku Database
     /// </summary>
-    public class DespatchBayExpressDataBase
+    public class ScanSKUDataBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:DespatchBayExpress.DespatchBayExpressDataBase"/> class.
         /// </summary>
-        public DespatchBayExpressDataBase()
+        public ScanSKUDataBase()
         {
         }
 

@@ -1,7 +1,7 @@
 ﻿using SQLite;
 using System.Collections.Generic;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     // BarcodeScan: contains image resource ID and caption:
     public class BarcodeScan
@@ -42,7 +42,7 @@ namespace DespatchBayExpress
 
         public void FetchAll()
         {
-            var scans = db.Query<DespatchBayExpressDataBase.ParcelScans>("SELECT * FROM ParcelScans");
+            var scans = db.Query<ScanSKUDataBase.ParcelScans>("SELECT * FROM ParcelScans");
             CurrentScans.Clear();
             foreach (var scan in scans)
             {
@@ -54,7 +54,7 @@ namespace DespatchBayExpress
 
         public void FetchUnCollected()
         {
-            var scans = db.Query<DespatchBayExpressDataBase.ParcelScans>("SELECT * FROM ParcelScans where isCollected = 0");
+            var scans = db.Query<ScanSKUDataBase.ParcelScans>("SELECT * FROM ParcelScans where isCollected = 0");
             CurrentScans.Clear();
             foreach (var scan in scans)
             {
@@ -66,7 +66,7 @@ namespace DespatchBayExpress
 
         public void FetchCollected()
         {
-            var scans = db.Query<DespatchBayExpressDataBase.ParcelScans>("SELECT * FROM ParcelScans  where isCollected = 1");
+            var scans = db.Query<ScanSKUDataBase.ParcelScans>("SELECT * FROM ParcelScans  where isCollected = 1");
             CurrentScans.Clear();
             foreach (var scan in scans)
             {
@@ -78,7 +78,7 @@ namespace DespatchBayExpress
 
         public void FetchUnsent()
         {
-            var scans = db.Query<DespatchBayExpressDataBase.ParcelScans>("SELECT * FROM ParcelScans WHERE Sent IS null");
+            var scans = db.Query<ScanSKUDataBase.ParcelScans>("SELECT * FROM ParcelScans WHERE Sent IS null");
             CurrentScans.Clear();
             foreach (var scan in scans)
             {

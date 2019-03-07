@@ -10,8 +10,8 @@
     <TemplateGuid>{84dd83c5-0fe3-4294-9419-09e7c8ba324f}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DespatchBayExpress</RootNamespace>
-    <AssemblyName>DespatchBayExpress</AssemblyName>
+    <RootNamespace>ScanSKU</RootNamespace>
+    <AssemblyName>JonnyHonda</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -80,7 +80,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DespatchBayExpressDatabase.cs" />
+    <Compile Include="ScanSKUDatabase.cs" />
     <Compile Include="SqliteActivity.cs" />
   </ItemGroup>
   <ItemGroup>

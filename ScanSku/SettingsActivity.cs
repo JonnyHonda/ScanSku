@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     [Activity(WindowSoftInputMode = SoftInput.StateAlwaysHidden, Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = false)]
     public class SettingsActivity : AppCompatActivity
@@ -57,7 +57,7 @@ namespace DespatchBayExpress
                 System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
                 "localscandata.db3");
             SQLiteConnection databaseConnection = new SQLiteConnection(databasePath);
-            databaseConnection.CreateTable<DespatchBayExpressDataBase.TrackingNumberPatterns>();
+            databaseConnection.CreateTable<ScanSKUDataBase.TrackingNumberPatterns>();
 
             PopulateRecycleView();
             TrackingScan = FindViewById<EditText>(Resource.Id.txtentry);
@@ -148,7 +148,7 @@ namespace DespatchBayExpress
             try
             {
                 Log.Info("TAG-SETTINGS", "Delete Exisiting data");
-                databaseConnection.DeleteAll<DespatchBayExpressDataBase.TrackingNumberPatterns>();
+                databaseConnection.DeleteAll<ScanSKUDataBase.TrackingNumberPatterns>();
             }
             catch
             {
@@ -169,7 +169,7 @@ namespace DespatchBayExpress
                 Log.Info("TAG-SETTINGS", "Loading regexs failed");
                 jsonTrackingRegexs = "[{\"Failed\": \"/" + e.Message + "/\"}]";
             }
-            databaseConnection.CreateTable<DespatchBayExpressDataBase.TrackingNumberPatterns>();
+            databaseConnection.CreateTable<ScanSKUDataBase.TrackingNumberPatterns>();
 
 
             List<Dictionary<string, string>> obj = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(jsonTrackingRegexs);
@@ -183,7 +183,7 @@ namespace DespatchBayExpress
                     int startIndex = testText.IndexOf('/');
                     int endIndex = testText.LastIndexOf('/');
                     string patternString = testText.Substring(startIndex + 1, endIndex - startIndex - 1);
-                    var record = new DespatchBayExpressDataBase.TrackingNumberPatterns
+                    var record = new ScanSKUDataBase.TrackingNumberPatterns
                     {
                         Courier = item.Key,
                         Pattern = patternString,

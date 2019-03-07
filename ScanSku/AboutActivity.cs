@@ -5,7 +5,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar",MainLauncher =false)]
     public class AboutActivity : Activity

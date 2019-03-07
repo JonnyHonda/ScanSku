@@ -1,4 +1,4 @@
-﻿namespace DespatchBayExpress
+﻿namespace ScanSKU
 {
     using Newtonsoft.Json;
     using System;

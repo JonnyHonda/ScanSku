@@ -2,7 +2,7 @@
 using Android.Content;
 using Android.Preferences;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     /// <summary>
     /// App preferences. This call allows the application to save prefernces with the applications context rather than in a database,

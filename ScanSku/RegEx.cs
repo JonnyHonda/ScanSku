@@ -1,7 +1,7 @@
 ﻿using SQLite;
 using System.Collections.Generic;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     // BarcodeScan: contains image resource ID and caption:
     public class RegExPattern
@@ -51,7 +51,7 @@ namespace DespatchBayExpress
 
         public void FetchPatternList()
         {
-            var scans = db.Query<DespatchBayExpressDataBase.TrackingNumberPatterns>("SELECT * FROM TrackingNumberPatterns");
+            var scans = db.Query<ScanSKUDataBase.TrackingNumberPatterns>("SELECT * FROM TrackingNumberPatterns");
             CurrentScans.Clear();
             foreach (var scan in scans)
             {

@@ -1,7 +1,7 @@
 ﻿using Android.Support.V7.Widget;
 using Android.Views;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     public class TrackingNumberDataAdapter : RecyclerView.Adapter
     {

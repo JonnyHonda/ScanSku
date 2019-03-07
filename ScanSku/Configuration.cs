@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DespatchBayExpress
+namespace ScanSKU
 {
     public partial class Configuration
     {
