@@ -69,18 +69,18 @@ Any data that application has will can be exported as CSV file, this file will b
 If you device has GPS, this can be enabled and used as part of the uploaded data
 
 **Security Token support**
-It is possible to set a configurable value *ApplicationKey* as a security token, the application will send this in the HTTP headers of the data as *x-db-api-key*  your receiving application can use this key/value pair to identify that the data is coming from a valid device.
+It is possible to set a configurable value *ApplicationKey* as a security token, the application will send this in the HTTP headers of the data as *x-scansku-api-key*  your receiving application can use this key/value pair to identify that the data is coming from a valid device.
 
 **Batched uploads**
-A group of scans taken in one session and then uploaded is called a batch, then a new batch is created ready for the next upload. If an upload was to fail the items are still considered as batched but just not sent and a new batch will still be created. When the application is able to send all previous batches are sent, each batch will have a unique batch number sent both in the header as *x-db-batch* and in the root of the uploaded JSON data as *batch*.
+A group of scans taken in one session and then uploaded is called a batch, then a new batch is created ready for the next upload. If an upload was to fail the items are still considered as batched but just not sent and a new batch will still be created. When the application is able to send all previous batches are sent, each batch will have a unique batch number sent both in the header as *x-scansku-batch* and in the root of the uploaded JSON data as *batch*.
 
 **JSON data submission**
 The data is as a JSON  object, the HTTP headers will contain the following additional information
 - content-type  application/json
-- the device serial number as x-db-serial-number
-- the batch number as x-db-batch
+- the device serial number as x-scansku-serial-number
+- the batch number as x-scansku-batch
 - the user agent as Man-in-Van Handheld Device
-- the application token as x-db-api-key
+- the application token as x-scansku-api-key
 
 The JSON object will follow the following example
 
