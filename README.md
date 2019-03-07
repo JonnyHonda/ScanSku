@@ -12,7 +12,7 @@ This application has been designed to work specifically on the **M Series Rugged
 - Batched uploads
 - JSON data submission
 
-** Configurable data submission endpoint **
+**Configurable data submission endpoint**
 The application is configured by a a QR code, doing allows the application to be configured in a single scan. This code is a simple JSON object that contains the name value pairs of configuration items.
 
     {
@@ -44,6 +44,7 @@ This JSON object can be converted to a QR code here https://www.barcodesinc.com/
 
 **Configurable Regular expression filters** 
 Complex regular expressions can be setup to filter out unwanted scans, foe example the following example filters for only these specific courier barcodes.
+
      [{ 
          "royal-mail": "/^([A-Z]{2}[0-9]{9}GB)/gi",
           "parcelforce-international": "/^((EK|CK){2}[0-9]{9}GB)/gi",
