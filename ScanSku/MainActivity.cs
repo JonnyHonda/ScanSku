@@ -475,9 +475,9 @@ namespace ScanSKU
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
                 httpWebRequest.UserAgent += userAgent;
-                httpWebRequest.Headers["x-db-api-key"] = token;
-                httpWebRequest.Headers["x-db-batch"] = collection.batchnumber;
-                httpWebRequest.Headers["x-db-serial-number"] = setialNumber;
+                httpWebRequest.Headers["x-scansku-api-key"] = token;
+                httpWebRequest.Headers["x-scansku-batch"] = collection.batchnumber;
+                httpWebRequest.Headers["x-scansku-serial-number"] = setialNumber;
 
                 try
                 {
