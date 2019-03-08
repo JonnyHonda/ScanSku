@@ -23,31 +23,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <RelativeLayout
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            android:background="#689F38"
-            android:gravity="center"
-            android:layout_marginTop="55dp"
-            android:layout_gravity="center">
-            <TextView
-                android:id="@+id/header_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/settings_table"
-                android:textColor="#FFFFFF"
-                android:textSize="25sp"
+		<RelativeLayout
+			android:id="@+id/header"
+			android:layout_width="match_parent"
+			android:layout_height="30dp"
+			android:layout_alignParentTop="true"
+			android:background="@color/colorHeader"
+			android:gravity="center"
+			android:layout_marginTop="55dp"
+			android:layout_gravity="center">
+			<TextView
+				android:id="@+id/header_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/settings_table"
+				android:textColor="#FFFFFF"
+				android:textSize="25sp"
 
                 />
-        </RelativeLayout>
+		</RelativeLayout>
         <RelativeLayout
             android:id="@+id/footer"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
-            android:background="#689F38"
+            android:background="@color/colorHeader"
             android:gravity="center"
             android:layout_gravity="center">
             <TextView
@@ -137,7 +137,7 @@
                 <TableRow>
                     <TextView
                         android:id="@+id/TextView04" android:text="@string/regex_table"
-                        android:layout_weight="1" android:background="#689F38"
+                        android:layout_weight="1" android:background="@color/colorHeader"
                         android:textColor="#FFF"
                         android:textStyle="bold"
                         android:padding="10dp"
