@@ -8,7 +8,7 @@ namespace ScanSKU
     public class ScanSKUDataBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:DespatchBayExpress.DespatchBayExpressDataBase"/> class.
+        /// Initializes a new instance of the <see cref="T:JonnyHonda.ScanSKUDataBase"/> class.
         /// </summary>
         public ScanSKUDataBase()
         {

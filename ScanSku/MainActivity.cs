@@ -394,7 +394,7 @@ namespace ScanSKU
 
                 // Notify the user about the completed "download"
                 var downloadManager = DownloadManager.FromContext(Android.App.Application.Context);
-                downloadManager.AddCompletedDownload(fileName, "DespatchBay Express Export", true, "application/txt", filepath, File.ReadAllBytes(filepath).Length, true);
+                downloadManager.AddCompletedDownload(fileName, "Barcode Scan Data Export", true, "application/txt", filepath, File.ReadAllBytes(filepath).Length, true);
             }
             else
 
