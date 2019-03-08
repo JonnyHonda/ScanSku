@@ -31,7 +31,7 @@ This JSON object can be converted to a QR code here https://www.barcodesinc.com/
 **Configuration features**
 *UploadEndPoint*:  This is the location that the application will send the scanned data to, the end point must be capable to receive a payload of application/json and must return a HTTP status code of 200 OK in order for the application to consider the data successfully sent.
   
-*RegexEndPoint*:  The application can use regular expressions to filter out unwanted scans. if you don't wish to use this feature sent the file on your RegexEndPpint to contain.
+*RegexEndPoint*:  The application can use regular expressions to filter out unwanted scans. if you don't wish to use this feature set the file on your RegexEndPoint to contain.
 
     [{
     "all": "/^*/gi"
@@ -79,7 +79,7 @@ The data is as a JSON  object, the HTTP headers will contain the following addit
 - content-type  application/json
 - the device serial number as x-scansku-serial-number
 - the batch number as x-scansku-batch
-- the user agent as Man-in-Van Handheld Device
+- the user agent as "ScanSKU Handheld Device"
 - the application token as x-scansku-api-key
 
 The JSON object will follow the following example
