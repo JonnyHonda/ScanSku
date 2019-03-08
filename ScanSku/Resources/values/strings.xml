@@ -8,4 +8,6 @@
   <string name="permissions_not_granted">permissions not granted</string>
   <string name="settings_table">Current Config</string>
   <string name="regex_table">Current Regexes</string>
+
+
 </resources>
