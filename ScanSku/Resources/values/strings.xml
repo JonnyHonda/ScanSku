@@ -7,7 +7,9 @@
   <string name="permission_available_location">permission available location</string>
   <string name="permissions_not_granted">permissions not granted</string>
   <string name="settings_table">Current Config</string>
+  <string name="user_agent">ScanSku Handheld Device</string>
   <string name="regex_table">Current Regexes</string>
+  
 
 
 </resources>

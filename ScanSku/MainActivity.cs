@@ -289,7 +289,7 @@ namespace ScanSKU
                     Dictionary<string, string> Parameters = new Dictionary<string, string>
                     {
                         { "httpEndPoint", httpEndPoint },
-                        { "userAgent", "Man-In-VAN Handheld Device" },
+                        { "userAgent", "@string/user_agent" },
                         { "token", applicationKey },
                         { "retentionPeriod", retentionPeriod },
 

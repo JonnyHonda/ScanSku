@@ -3482,8 +3482,8 @@ namespace ScanSKU
 			// aapt resource value: 0x7f0c002d
 			public const int permissions_not_granted = 2131492909;
 			
-			// aapt resource value: 0x7f0c002f
-			public const int regex_table = 2131492911;
+			// aapt resource value: 0x7f0c0030
+			public const int regex_table = 2131492912;
 			
 			// aapt resource value: 0x7f0c0011
 			public const int search_menu_title = 2131492881;
@@ -3493,6 +3493,9 @@ namespace ScanSKU
 			
 			// aapt resource value: 0x7f0c0026
 			public const int status_bar_notification_info_overflow = 2131492902;
+			
+			// aapt resource value: 0x7f0c002f
+			public const int user_agent = 2131492911;
 			
 			static String()
 			{
