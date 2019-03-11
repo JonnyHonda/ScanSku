@@ -47,14 +47,6 @@ namespace ScanSKU
 
             btnSaveImage.Click += async delegate
             {
-
-
-
-                DataUpload ds = new DataUpload();
-                
-
-
-
                 var path = Environment.GetExternalStoragePublicDirectory(Environment.DirectoryPictures).AbsolutePath;
                 if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.WriteExternalStorage) == (int)Permission.Granted ||
                ContextCompat.CheckSelfPermission(this, Manifest.Permission.ReadExternalStorage) == (int)Permission.Granted)
