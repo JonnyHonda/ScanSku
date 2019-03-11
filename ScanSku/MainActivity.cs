@@ -268,6 +268,9 @@ namespace ScanSKU
                 case Resource.Id.menu_sqldata:
                     StartActivity(typeof(SqliteActivity));
                     break;
+                case Resource.Id.menu_signature:
+                    StartActivity(typeof(SignaturPadActivity));
+                    break;
                 case Resource.Id.menu_exportdata:
                     ExportScanData();
                     break;
