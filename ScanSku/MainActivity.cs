@@ -299,7 +299,8 @@ namespace ScanSKU
                     };
                     try
                     {
-                        Parameters.Add("serialNumber", ap.GetAccessKey("serialNumber"));
+                        Parameters.Add("serialNumber", ap.GetAccessKey("serial" +
+                            "Number"));
                     }
                     catch
                     {
